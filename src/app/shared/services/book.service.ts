@@ -2,21 +2,16 @@ import {Injectable} from '@angular/core';
 import {Book} from '../interfaces/book';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class BookService {
 
-  private books: Book[] = [
-    {id: '1', isbn: '123456', title: 'Angular2 Training'},
-    {id: '2', isbn: '234567', title: 'Schulung', author: 'Adesso'},
-    {id: '3', isbn: '345678', title: 'Dortmund'}
-  ];
-
-  constructor() {
+  constructor(private httpService: HttpClient) {
   }
 
   getBooks(): Observable<Book[]> {
-    return Observable.of(this.books);
+    return this.httpService.get<Book[]>('http://localhost:3000/books');
   }
 
 }
