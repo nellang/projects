@@ -3,20 +3,18 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BookService} from './shared/services/book.service';
-import {BookListComponent} from './book-list/book-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import {routing} from './app.routing';
-import {BookDetailComponent} from './book-detail/book-detail.component';
+import {BookModule} from './book/book.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BookListComponent,
-    BookDetailComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    BookModule,
     routing
   ],
   providers: [BookService],

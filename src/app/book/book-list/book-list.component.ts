@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {BookService} from '../shared/services/book.service';
-import {Book} from '../shared/interfaces/book';
-import {Subscription} from "rxjs/Subscription";
+import {BookService} from '../../shared/services/book.service';
+import {Book} from '../../shared/interfaces/book';
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-book-list',
