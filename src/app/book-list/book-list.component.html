@@ -1,11 +1,13 @@
-<h1 class="header">
+<div class="header">
   <ng-content select="header"></ng-content>
-</h1>
-
-<div *ngFor="let book of books">
-  {{book.isbn}} - {{book.title}}
 </div>
 
-<h2 class="footer">
+<div *ngFor="let book of books">
+  <a [routerLink]="['books', book.id]">
+    {{book.isbn}} - {{book.title}}
+  </a>
+</div>
+
+<div class="footer">
   <ng-content select="footer"></ng-content>
-</h2>
+</div>
