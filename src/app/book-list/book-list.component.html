@@ -1,3 +1,11 @@
+<h1 class="header">
+  <ng-content select="header"></ng-content>
+</h1>
+
 <div *ngFor="let book of books">
   {{book.isbn}} - {{book.title}}
 </div>
+
+<h2 class="footer">
+  <ng-content select="footer"></ng-content>
+</h2>
