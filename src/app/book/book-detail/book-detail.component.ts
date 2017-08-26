@@ -23,4 +23,9 @@ export class BookDetailComponent implements OnInit {
     });
   }
 
+  save() {
+    this.bookService.saveBook(this.currentBook).subscribe(param => {
+      console.log(param);
+    });
+  }
 }

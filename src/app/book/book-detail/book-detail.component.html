@@ -10,6 +10,8 @@
     <input type="text" id="title" [(ngModel)]="currentBook.title" name="title">
   </form>
 
+  <button (click)="save()">Save</button>
+
   <p [hidden]="form.valid" style="color: red">
     Input is invalid!
   </p>

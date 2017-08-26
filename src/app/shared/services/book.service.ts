@@ -18,4 +18,8 @@ export class BookService {
   getBookById(id: string) {
     return this.httpService.get<Book>(environment.bookUrl + '/' + id);
   }
+
+  saveBook(book: Book): Observable<Object> {
+    return this.httpService.put(environment.bookUrl + '/' + book.id, book);
+  }
 }
