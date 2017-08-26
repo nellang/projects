@@ -6,6 +6,7 @@ import {BookListComponent} from './book-list/book-list.component';
 import {BookDetailComponent} from './book-detail/book-detail.component';
 import {ConfirmDeactivateGuard} from '../shared/guards/confirm-deactivate.guard';
 import {FormsModule} from '@angular/forms';
+import {TooltipDirective} from '../shared/directives/tooltip.directive';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {FormsModule} from '@angular/forms';
   ],
   declarations: [
     BookListComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    TooltipDirective
   ],
   providers: [ConfirmDeactivateGuard]
 })

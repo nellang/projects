@@ -1,7 +1,17 @@
 <div *ngIf="currentBook">
-  <form>
-    <label for="title"></label>
+
+  <h3>Book Details</h3>
+
+  <form #form="ngForm" appTooltip="Enter">
+    <label for="isbn" newText="ISBN">ISBN</label>
+    <input type="text" required id="isbn" [(ngModel)]="currentBook.isbn" name="isbn">
+
+    <label for="title" newText="Title">Title</label>
     <input type="text" id="title" [(ngModel)]="currentBook.title" name="title">
   </form>
-  {{currentBook.title}}
+
+  <p [hidden]="form.valid" style="color: red">
+    Input is invalid!
+  </p>
+
 </div>
