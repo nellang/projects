@@ -1,29 +1,23 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BookService} from '../../shared/services/book.service';
 import {Book} from '../../shared/interfaces/book';
-import {Subscription} from 'rxjs/Subscription';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.scss']
 })
-export class BookListComponent implements OnInit, OnDestroy {
+export class BookListComponent implements OnInit {
 
-  public books: Book[];
+  public books: Observable<Book[]>;
 
-  private bookSubscription: Subscription;
 
   constructor(private bookService: BookService) {
   }
 
   ngOnInit() {
-    this.bookSubscription = this.bookService.getBooks().subscribe(books => {
-      this.books = books;
-    });
+    this.books = this.bookService.getBooks();
   }
 
-  ngOnDestroy() {
-    this.bookSubscription.unsubscribe();
-  }
 }

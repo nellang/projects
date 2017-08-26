@@ -2,11 +2,11 @@
 
   <h3>Book Details</h3>
 
-  <form #form="ngForm" appTooltip="Enter">
-    <label for="isbn" newText="ISBN">ISBN</label>
+  <form #form="ngForm">
+    <label for="isbn" appTooltip="Enter" newText="ISBN">ISBN</label>
     <input type="text" required id="isbn" [(ngModel)]="currentBook.isbn" name="isbn">
 
-    <label for="title" newText="Title">Title</label>
+    <label for="title" appTooltip="Enter" newText="Title">Title</label>
     <input type="text" id="title" [(ngModel)]="currentBook.title" name="title">
   </form>
 

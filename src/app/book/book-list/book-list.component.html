@@ -1,6 +1,6 @@
-<div *ngFor="let book of books">
+<div *ngFor="let book of books | async">
   <a [routerLink]="['/books', book.id]">
-    {{book.isbn}} - {{book.title}}
+    {{book.isbn}} - {{book.title | uppercase}}
   </a>
 </div>
 
