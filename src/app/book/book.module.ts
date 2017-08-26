@@ -5,11 +5,13 @@ import {BookRoutingModule} from './book-routing.module';
 import {BookListComponent} from './book-list/book-list.component';
 import {BookDetailComponent} from './book-detail/book-detail.component';
 import {ConfirmDeactivateGuard} from '../shared/guards/confirm-deactivate.guard';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    BookRoutingModule
+    BookRoutingModule,
+    FormsModule
   ],
   declarations: [
     BookListComponent,
